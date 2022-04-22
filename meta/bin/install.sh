@@ -16,7 +16,7 @@ script_kit_should_be_installed_path="$(expand-tilde ~/.kenv)"
 source_node_modules="${script_kit_should_be_installed_path}/node_modules"
 link_destination="${script_kit_should_be_installed_path}/kenvs/${my_kenv_name}"
 
-echo "given values for variables"
+echo "Installation is starting with given values for variables"
 echo "- script_kit_should_be_installed_path: ${script_kit_should_be_installed_path}"
 echo "- my_kenv_name: ${my_kenv_name}"
 echo "- my_kenv_clone_path: ${my_kenv_clone_path}"
@@ -30,6 +30,8 @@ if ! test -d "${script_kit_should_be_installed_path}"; then
 	exit 1
 fi
 
+set -x
+
 if command -v  gh > /dev/null; then
 	gh repo clone ryuheechul/kenv -- "${my_kenv_clone_path}"
 else
@@ -39,5 +41,7 @@ fi
 ln -sf "${my_kenv_clone_path}" "${link_destination}"
 # this is to workaround an issue like https://github.com/johnlindquist/kit/discussions/728
 ln -sf "${source_node_modules}" "${link_destination}/node_modules"
+
+set +x
 
 echo "Installation seems successful! Check '${link_destination}' to verify"
