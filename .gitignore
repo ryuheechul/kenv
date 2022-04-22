@@ -103,3 +103,6 @@ dist
 # TernJS port file
 .tern-port
 .history
+
+# ignore node_modules symlink
+node_modules

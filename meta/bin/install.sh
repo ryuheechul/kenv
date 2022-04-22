@@ -22,6 +22,10 @@ else
 	git clone https://github.com/ryuheechul/kenv "${my_kenv_install_location}"
 fi
 
-ln -sf "${my_kenv_install_location}" "${HOME}/.kenv/kenvs/${my_kenv_name}"
+link_destination="${HOME}/.kenv/kenvs/${my_kenv_name}"
 
-echo "Installation seems successful! Check '${HOME}/.kenv/kenvs/${my_kenv_name}' to verify"
+ln -sf "${my_kenv_install_location}" "${link_destination}"
+# this is to workaround an issue like https://github.com/johnlindquist/kit/discussions/728
+ln -sf "${HOME}/.kenv/node_modules" "${link_destination}/node_modules"
+
+echo "Installation seems successful! Check '${link_destination}' to verify"
