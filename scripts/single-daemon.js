@@ -7,6 +7,8 @@ import "@johnlindquist/kit";
 // commands that I would like to run as a singleton daemons
 const commands = [
     "base16-shell-auto-reload-on-tmux",
+    // TODO: the naming and discovering the file can improve
+    "~/.config/dfs-rhc/bin/mac/base16-shell-to-follow-system-appearance.sh",
 ]
 
 const preview = async (name) => md(`${name}`);
