@@ -8,7 +8,7 @@ import "@johnlindquist/kit";
 const commands = [
     "base16-shell-auto-reload-on-tmux",
     // TODO: the naming and discovering the file can improve
-    "~/.config/dfs-rhc/bin/mac/base16-shell-to-follow-system-appearance.sh",
+    "~/.config/dfs-rhc/bin/darwin/base16-shell-to-follow-system-appearance.sh",
 ]
 
 const preview = async (name) => md(`${name}`);
