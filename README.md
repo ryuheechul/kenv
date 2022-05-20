@@ -8,7 +8,7 @@ A good answer for how to manage Script Kit code was found [here](https://github.
 ## install
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ryuheechul/kenv/main/meta/bin/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ryuheechul/kenv/main/meta/bin/install.sh)"
 ```
 
 _read [the script](./meta/bin/install.sh) to see customizable options_
